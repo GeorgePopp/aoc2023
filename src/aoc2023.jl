@@ -9,6 +9,7 @@ as a source of 'best practice'.
 using InlineTest
 
 include("day01.jl")
+include("day02.jl")
 
 
 end # module aoc2023
