@@ -15,3 +15,7 @@ I also discovered (and then subsequently overused) `CaresianIndex` which probabl
 ## Day 04
 
 I found this problem easier than yesterday's. I used recursion for the second part of the challenge. I haven't come across many day-to-day uses of recursion so it was fun to think in terms of a recursive function. I also tried benchmarking and profiling the code to make it faster. I used `@time` and `@benchmark` (from `BenchmarkTools`) for benchmarking, `@code_warntype` to check for type inference, and `@profile` and `@profview` (from `ProfileView`) to profile the code. I was able to make a noticable difference to the running time of the second problem.
+
+## Day 05
+
+The main challenge for part 2 was performance. I made the (ultimately) poor decision to make a large convolution of all the mappings using the very cool `\circ` operator in Julia. My implementation ended up being very slow due to type instability. In the end my code produced the right answer but took a few mins to run. If I had the time, I would have redone the mapping parts to avoid this type unstable convolution. I'm not sure what the best option would be for performance, I'll try and come back to this at a future date.
