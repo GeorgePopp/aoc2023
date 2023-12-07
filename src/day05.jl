@@ -1,6 +1,8 @@
 module day05
 
 using InteractiveUtils
+using ..InlineTest
+
 
 TEST_STRING = """seeds: 79 14 55 13
 
@@ -177,19 +179,23 @@ function solve2(io::IO)
     seedsrange = getseedsrange(strseed)
     seedmap = createfullmap(io)
     num_ranges = length(seedsrange)
-    println("There are ", num_ranges, " ranges to go through")
+    #println("There are ", num_ranges, " ranges to go through")
 
     curr_min = 999999999999999
     for (i, seeds) in enumerate(seedsrange)
         seedloc = seedmap.(seeds) # apply f to each
         rng_min = minimum(seedloc)
         curr_min = min(curr_min, rng_min)
-        println(i)
-        println("Current min: ", curr_min)
+        #println(i)
+        #println("Current min: ", curr_min)
     end
     return curr_min
 end
 
+@testset "day05" begin
+    @test solve1(IOBuffer(TEST_STRING)) == 35
+    @test solve2(IOBuffer(TEST_STRING)) == 46
+end
 
 
 end # module

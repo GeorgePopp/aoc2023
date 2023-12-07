@@ -19,3 +19,13 @@ I found this problem easier than yesterday's. I used recursion for the second pa
 ## Day 05
 
 The main challenge for part 2 was performance. I made the (ultimately) poor decision to make a large convolution of all the mappings using the very cool `\circ` operator in Julia. My implementation ended up being very slow due to type instability. In the end my code produced the right answer but took a few mins to run. If I had the time, I would have redone the mapping parts to avoid this type unstable convolution. I'm not sure what the best option would be for performance, I'll try and come back to this at a future date.
+
+## Day 06
+
+This problem was quite straightforward as we can simply bruteforce all attempts. The Julia code I wrote didn't need any optimisations and ran basically instantly.
+
+I also managed to get the `@profview` macro working by using `Shift+Enter` to evaluate each line in the REPL rather than running the process. I found the guide for interpreting the output very useful - https://www.julia-vscode.org/docs/stable/userguide/profiler/.
+
+## Day 07
+
+I made use of a custom mutable struct that had defaults that we're filled later. If I was to make this more efficient I could have made struct of arrays instead of an array of structs.
