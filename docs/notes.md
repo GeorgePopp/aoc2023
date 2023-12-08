@@ -29,3 +29,12 @@ I also managed to get the `@profview` macro working by using `Shift+Enter` to ev
 ## Day 07
 
 I made use of a custom mutable struct that had defaults that we're filled later. If I was to make this more efficient I could have made struct of arrays instead of an array of structs.
+
+## Day 08
+
+I initially wanted to do something with Binary Trees as it seemed like a good fit for this problem. I came across a straightforward implementation in the [AbstractTrees.jl source code](https://github.com/JuliaCollections/AbstractTrees.jl/blob/master/test/examples/binarytree.jl), but I couldn't think of a good way to populate the tree.
+
+I instead oped to just compare strings, knowing that it could be reasonably slow. 
+
+I tried to bruteforce Part 2 but quickly realised that it would be far too slow. Fortunatly, it was straightforward to break the problem down and  to use [`lcm`](https://docs.julialang.org/en/v1/base/math/#Base.lcm) to calculate the lowest number when each node would end in Z.
+

@@ -9,7 +9,7 @@ using InteractiveUtils
     Part 1
 =#
 
-TEST_STRING = """Time:      7  15   30411
+TEST_STRING = """Time:      7  15   30
 Distance:  9  40  200"""
 
 
